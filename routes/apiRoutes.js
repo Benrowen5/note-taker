@@ -1,5 +1,6 @@
 //Requires
-
+const router = require('express').Router();
+const {notes} = require('../db/db');
 
 // GET "/api/notes" responds with all notes from the database
 
@@ -11,3 +12,5 @@
 
 
 // export
+
+module.exports = router;
