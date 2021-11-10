@@ -3,8 +3,8 @@ const apiRoutes = require('./routes/apiRoutes.js');
 const htmlRoutes = require('./routes/htmlRoutes.js');
 
 // initialize app and create a port
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
 
 // set up middleware functions
 // parse incoming JSON data
