@@ -3,8 +3,9 @@ const apiRoutes = require('./routes/apiRoutes.js');
 const htmlRoutes = require('./routes/htmlRoutes.js');
 
 // initialize app and create a port
-const PORT = process.env.PORT || 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
+
 
 // set up middleware functions
 // parse incoming JSON data
@@ -20,4 +21,4 @@ app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // start server on the port
-app.listen(PORT, () => {console.log(`Listening on PORT: ${PORT}`)});
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
