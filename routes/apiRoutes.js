@@ -6,8 +6,6 @@ const {notes} = require('../db/db');
 
 const router = require('express').Router();
 
-// const {saveNote} = require('../public/assets/js/index');
-
 // GET "/api/notes" responds with all notes from the database
 router.get('/notes', (req, res) => {
     res.json(notes);
@@ -19,14 +17,25 @@ router.post('/notes', (req, res) => {
     req.body.id = notes.length.toString();
     // create a new const for the note object
     const newNote = req.body;
+    console.log(newNote);
     // add new note to notes array
     notes.push(newNote);
+    // fs.writeFileSync('./db/db.json', JSON.stringify(notes));
 
     res.json(newNote);
-})
+});
 
 // DELETE "/api/notes" deletes the note with an id equal to req.params.id
+router.delete('/notes/:id', (req, res) => {
+    console.log(req.params.id);
+    const deleted = notes[req.params.id]
+    console.log(deleted);
 
+    // remove the selected note by id
+    notes.splice(deleted,1);
+       
+    res.json(notes);
+});
 
 // export
 
