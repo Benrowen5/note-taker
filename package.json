@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "start": "node server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "engines": {
     "node": "14.18.0"
@@ -15,5 +17,8 @@
   "devDependencies": {
     "express": "^4.17.1",
     "uuid": "^8.3.2"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
